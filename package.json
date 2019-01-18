@@ -1,7 +1,7 @@
 {
-  "name": "@jingsam/vector-tile",
+  "name": "@cgcs2000/vector-tile",
   "description": "Parses vector tiles",
-  "repository": "https://github.com/jingsam/vector-tile-js.git",
+  "repository": "https://github.com/cgcs2000/vector-tile-js.git",
   "version": "1.3.3",
   "license": "BSD-3-Clause",
   "main": "index.js",
