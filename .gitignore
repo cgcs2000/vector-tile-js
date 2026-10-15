@@ -1,3 +1,6 @@
 node_modules
 index.d.ts
 .DS_Store
+.agents
+.zcode
+openspec

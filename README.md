@@ -5,7 +5,7 @@ This library reads [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-s
 ## Example
 
 ```js
-import {VectorTile} from '@mapbox/vector-tile';
+import {VectorTile} from '@cgcs2000/vector-tile';
 import Protobuf from 'pbf';
 
 const tile = new VectorTile(new Protobuf(data));
@@ -27,7 +27,7 @@ are gzip-encoded, so a complete example of parsing them with the native
 zlib module would be:
 
 ```js
-import {VectorTile} from '@mapbox/vector-tile';
+import {VectorTile} from '@cgcs2000/vector-tile';
 import Protobuf from 'pbf';
 import {gunzipSync} from 'zlib';
 
@@ -39,7 +39,7 @@ const tile = new VectorTile(new Protobuf(buffer));
 
 To install:
 
-    npm install @mapbox/vector-tile
+    npm install @cgcs2000/vector-tile
 
 
 ## API Reference

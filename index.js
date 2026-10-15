@@ -150,7 +150,7 @@ export class VectorTileFeature {
     }
 
     /**
-     * @param {number} x
+          * @param {number} x
      * @param {number} y
      * @param {number} z
      * @return {Feature}
@@ -165,7 +165,7 @@ export class VectorTileFeature {
         function projectPoint(p) {
             return [
                 (p.x + x0) * 360 / size - 180,
-                360 / Math.PI * Math.atan(Math.exp((1 - (p.y + y0) * 2 / size) * Math.PI)) - 90
+                90 - (p.y + y0) * 360 / size
             ];
         }
 

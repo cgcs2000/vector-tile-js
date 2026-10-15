@@ -1,8 +1,8 @@
 {
-  "name": "@mapbox/vector-tile",
+  "name": "@cgcs2000/vector-tile",
   "description": "Parses vector tiles",
   "repository": {
-    "url": "git+https://github.com/mapbox/vector-tile-js.git"
+    "url": "git+https://github.com/cgcs2000/vector-tile-js.git"
   },
   "version": "3.0.0",
   "type": "module",

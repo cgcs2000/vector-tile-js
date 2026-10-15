@@ -97,7 +97,7 @@ test('toGeoJSON', () => {
         },
         geometry: {
             type: 'Point',
-            coordinates: [13.402258157730103, 52.54398925380624]
+            coordinates: [13.402258157730103, -28.024422526359558]
         }
     }));
 
@@ -112,7 +112,7 @@ test('toGeoJSON', () => {
         },
         geometry: {
             type: 'LineString',
-            coordinates: [[13.399457931518555, 52.546334844036416], [13.399441838264465, 52.546504478525016]]
+            coordinates: [[13.399457931518555, -28.020565509796143], [13.399441838264465, -28.020286560058594]]
         }
     }));
 
@@ -124,9 +124,9 @@ test('toGeoJSON', () => {
         },
         geometry: {
             type: 'Polygon',
-            coordinates: [[[13.392285704612732, 52.54974045706258], [13.392264246940613, 52.549737195107554],
-                [13.392248153686523, 52.549737195107554], [13.392248153686523, 52.54974045706258],
-                [13.392285704612732, 52.54974045706258]]]
+            coordinates: [[[13.392285704612732, -28.014965057373047], [13.392264246940613, -28.014970421791077],
+                [13.392248153686523, -28.014970421791077], [13.392248153686523, -28.014965057373047],
+                [13.392285704612732, -28.014965057373047]]]
         }
     }));
 
@@ -138,38 +138,38 @@ test('toGeoJSON', () => {
     // https://github.com/mapbox/vector-tile-spec/issues/30
     assert.ok(approximateDeepEqual(geoJSONFromFixture('singleton-multi-point').geometry, {
         type: 'Point',
-        coordinates: [1, 2]
+        coordinates: [0.966796875, -87.978515625]
     }, 1e-1));
     assert.ok(approximateDeepEqual(geoJSONFromFixture('singleton-multi-line').geometry, {
         type: 'LineString',
-        coordinates: [[1, 2], [3, 4]]
+        coordinates: [[0.966796875, -87.978515625], [2.98828125, -85.95703125]]
     }, 1e-1));
     assert.ok(approximateDeepEqual(geoJSONFromFixture('singleton-multi-polygon').geometry, {
         type: 'Polygon',
-        coordinates: [[[1, 0], [0, 0], [1, 1], [1, 0]]]
+        coordinates: [[[0.966796875, -90], [0, -90], [0.966796875, -89.033203125], [0.966796875, -90]]]
     }, 1e-1));
 
     assert.ok(approximateDeepEqual(geoJSONFromFixture('multi-point').geometry, {
         type: 'MultiPoint',
-        coordinates: [[1, 2], [3, 4]]
+        coordinates: [[0.966796875, -87.978515625], [2.98828125, -85.95703125]]
     }, 1e-1));
     assert.ok(approximateDeepEqual(geoJSONFromFixture('multi-line').geometry, {
         type: 'MultiLineString',
-        coordinates: [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+        coordinates: [[[0.966796875, -87.978515625], [2.98828125, -85.95703125]], [[5.009765625, -84.0234375], [7.03125, -82.001953125]]]
     }, 1e-1));
     assert.ok(approximateDeepEqual(geoJSONFromFixture('multi-polygon').geometry, {
         type: 'MultiPolygon',
-        coordinates: [[[[1, 0], [0, 0], [1, 1], [1, 0]]], [[[-1, -1], [-1, 0], [0, 0], [-1, -1]]]]
+        coordinates: [[[[0.966796875, -90], [0, -90], [0.966796875, -89.033203125], [0.966796875, -90]]], [[[-0.966796875, -90.966796875], [-0.966796875, -90], [0, -90], [-0.966796875, -90.966796875]]]]
     }, 1e-1));
 
     // https://github.com/mapbox/vector-tile-js/issues/32
     assert.ok(approximateDeepEqual(geoJSONFromFixture('polygon-with-inner').geometry, {
         type: 'Polygon',
-        coordinates: [[[2, -2], [-2, -2], [-2, 2], [2, 2], [2, -2]], [[-1, 1], [-1, -1], [1, -1], [1, 1], [-1, 1]]]
+        coordinates: [[[2.021484375, -92.021484375], [-2.021484375, -92.021484375], [-2.021484375, -87.978515625], [2.021484375, -87.978515625], [2.021484375, -92.021484375]], [[-0.966796875, -89.033203125], [-0.966796875, -90.966796875], [0.966796875, -90.966796875], [0.966796875, -89.033203125], [-0.966796875, -89.033203125]]]
     }, 1e-1));
     assert.ok(approximateDeepEqual(geoJSONFromFixture('stacked-multipolygon').geometry, {
         type: 'MultiPolygon',
-        coordinates: [[[[2, -2], [-2, -2], [-2, 2], [2, 2], [2, -2]]], [[[1, -1], [-1, -1], [-1, 1], [1, 1], [1, -1]]]]
+        coordinates: [[[[2.021484375, -92.021484375], [-2.021484375, -92.021484375], [-2.021484375, -87.978515625], [2.021484375, -87.978515625], [2.021484375, -92.021484375]]], [[[0.966796875, -90.966796875], [-0.966796875, -90.966796875], [-0.966796875, -89.033203125], [0.966796875, -89.033203125], [0.966796875, -90.966796875]]]]
     }, 1e-1));
 
 });
